@@ -10,11 +10,10 @@ while (cycles == 0 || states.indexOf(input) == -1) {
 	states.push(input);
 	inputStr=input.split(" ");
 	arr=[];
-	inputStr.forEach(function(item) {
-		item=parseInt(item);
-		arr.push(parseInt(item));
+	for (var i=0; i<inputStr.length; i++) {
+		arr.push(parseInt(inputStr[i]));
 		//console.log("item: ",item," type: ",typeof(item));
-	});
+	}
 	//console.log("length: ",arr.length);
 	max=arr.reduce(function(a,b) { return Math.max(a, b); });
 	ind=arr.indexOf(max);
@@ -29,10 +28,10 @@ while (cycles == 0 || states.indexOf(input) == -1) {
 	}
 
 	input="";
-	arr.forEach(function (item) {
-		//console.log(item);
-		input=input.concat(" ",item.toString());
-	});
+	for (var i=0; i<arr.length; i++) {
+		console.log(arr[i]);
+		input=input.concat(" ",arr[i].toString());
+	}
 	// remove leading whitespace
 	input=input.trim();
 	console.log("Input: ",input,"\nStates:", states,"\nLength:",arr.length);
